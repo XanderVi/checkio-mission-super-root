@@ -1,44 +1,45 @@
 <p>
-    <i>( Describe task in general )</i>
+    Square roots, cube roots, 4th roots... It's too boring for Nicola. He needs the super root!
+    And he will find it.
 </p>
 
 <p>
-    Sum two passed ints
+    The super root of a number <strong>a</strong> is the number <strong>b</strong>,
+    such that <strong>b<sup>b</sup></strong>&nbsp;=&nbsp;<strong>a</strong>.
 </p>
-
-<p style="text-align: center;">
-    <img class="for_info_only" title="example" src="{{MEDIA}}example.png" alt="example" width="392px"/>
-    <img class="for_editor_only" title="example" src="{{MEDIA}}example.png" alt="example" width="380px"/>
-</p>
-
-<p><i>( Explain input and output values )</i></p>
 <p>
-    <strong>Input: </strong> Two arguments. Both are int
+    The result should be accurate so that  <strong>b<sup>b</sup>&nbsp;&asymp;&nbsp;a&plusmn;0.001</strong>.
+    Or <strong>a&nbsp;-&nbsp;0.001&nbsp;&lt;&nbsp;b<sup>b</sup>&nbsp;&lt;&nbsp;a&nbsp;+&nbsp;0.001</strong>.
 </p>
 
 <p>
-    <strong>Output: </strong> Int. 
+    <strong>Input: </strong> A number as an integer.
+</p>
+
+<p>
+    <strong>Output: </strong> The super root as a float or an integer.
 </p>
 
 
 
 <div class="for_info_only">
-    <p><i>( Put some usage examples )</i></p>
     <p>
         <strong>Example:</strong>
     </p>
     <pre class="brush: python">
-checkio(3, 2) == 5
-checkio(5, 7) == 12
+super_root(4) == 2
+super_root(27) == 3
+super_root(81) == 3.504339593597054
     </pre>
 </div>
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    <i>(Here you can explain how it can be used in development and what is usage of this.)</i>
+    This concept can be useful for the cryptography.
+    And you will look how work your calculator then calculate roots.
 </p>
 
 <p>
-    <strong>Precondition:</strong>
-    <i>Constraints for Input</i>
+    <strong>Precondition:</strong><br>
+    1 &le; number &le;
 </p>

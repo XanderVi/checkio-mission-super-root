@@ -34,16 +34,23 @@ from checkio.referees import checkers
 
 from tests import TESTS
 
+PRECISION = 0.001
+
+
+def checker(answer, user_result):
+    if not isinstance(user_result, (int, float)):
+        return False, "The result should be a float or an integer."
+    p = user_result ** user_result
+    if answer - PRECISION < p < answer + PRECISION:
+        return True, p
+    else:
+        return False, p
+
+
 api.add_listener(
     ON_CONNECT,
     CheckiOReferee(
         tests=TESTS,
-        cover_code={
-            'python-27': cover_codes.unwrap_args,  # or None
-            'python-3': cover_codes.unwrap_args
-        },
-        # checker=None,  # checkers.float.comparison(2)
-        # add_allowed_modules=[],
-        # add_close_builtins=[],
-        # remove_allowed_modules=[]
+        checker=None,  # checkers.float.comparison(2)
+        function_name="super_root"
     ).on_ready)
