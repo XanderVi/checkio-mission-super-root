@@ -40,10 +40,10 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             }
 
             //YOUR FUNCTION NAME
-            var fname = 'checkio';
+            var fname = 'super_root';
 
-            var checkioInput = data.in;
-            var checkioInputStr = ' ' + fname + '(' + JSON.stringify(checkioInput)  + ')';
+            var checkioInput = data.in || 81;
+            var checkioInputStr = fname + '(' + JSON.stringify(checkioInput)  + ')';
 
             var failError = function(dError) {
                 $content.find('.call').html('Fail: ' + checkioInputStr);
@@ -66,7 +66,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                 return false;
             }
 
-            var rightResult = data.ext["answer"];
+            var rightResult = data.ext["show"];
             var userResult = data.out;
             var result = data.ext["result"];
             var result_addon = data.ext["result_addon"];
@@ -79,6 +79,17 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
 
             if (!result) {
                 $content.find('.call').html('Fail: ' + checkioInputStr);
+                if (typeof(result_addon) === 'string') {
+                    if (result_addon !== "") {
+                        $content.find('.explanation').html(result_addon);
+                    }
+                    $content.find('.explanation').addClass('error');
+                }
+                else {
+
+                    $content.find('.explanation').html(userResult + "<sup>" + userResult + "</sup>=<br>" + result_addon);
+
+                }
                 $content.find('.answer').html('Right result:&nbsp;' + JSON.stringify(rightResult));
                 $content.find('.answer').addClass('error');
                 $content.find('.output').addClass('error');

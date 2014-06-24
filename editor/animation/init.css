@@ -58,6 +58,13 @@
     border-color: #de0202;
 }
 
+.animation-content .explanation {
+    color: #de0202;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
 .tryit-content {
     background-color: #dfe8f7;
     font-family: Verdana, Arial, helvetica, sans-serif;
@@ -68,6 +75,8 @@
     vertical-align: top;
     padding: 3px;
 }
+
+
 
 /*it for firefox*/
 .tryit-content .tool tr:first-child td:last-child {

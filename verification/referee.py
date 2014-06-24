@@ -40,6 +40,8 @@ PRECISION = 0.001
 def checker(answer, user_result):
     if not isinstance(user_result, (int, float)):
         return False, "The result should be a float or an integer."
+    if abs(user_result) > 12:
+        return False, ""
     p = user_result ** user_result
     if answer - PRECISION < p < answer + PRECISION:
         return True, p
@@ -51,6 +53,6 @@ api.add_listener(
     ON_CONNECT,
     CheckiOReferee(
         tests=TESTS,
-        checker=None,  # checkers.float.comparison(2)
+        checker=checker,  # checkers.float.comparison(2)
         function_name="super_root"
     ).on_ready)
