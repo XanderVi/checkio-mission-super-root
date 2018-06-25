@@ -40,7 +40,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             }
 
             //YOUR FUNCTION NAME
-            var fname = 'super_root';
+            var fname = 'superRoot';
 
             var checkioInput = data.in || 81;
             var checkioInputStr = fname + '(' + JSON.stringify(checkioInput)  + ')';

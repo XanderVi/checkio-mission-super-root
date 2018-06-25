@@ -26,11 +26,17 @@
     <p>
         <strong>Example:</strong>
     </p>
-    <pre class="brush: python">
-super_root(4) == 2
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">superRoot(4) == 2
+superRoot(27) == 3
+superRoot(81) == 3.504339593597054
+</pre>
+{% else %}
+<pre class="brush: python">super_root(4) == 2
 super_root(27) == 3
 super_root(81) == 3.504339593597054
-    </pre>
+</pre>
+{% endif %}
 </div>
 
 <p class="for_info_only">
