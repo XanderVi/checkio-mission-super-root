@@ -11,15 +11,16 @@ if (!global.is_checking) {
     console.log(superRoot(4))
 
     // These "asserts" using only for self-checking and not necessary for auto-testing
-    function checkResult(function, number) {
-        var result = function(number);
+    function checkResult(func, number) {
+        var result = func(number);
         var p = result ** result;
-        if number - 0.001 < p && p < number + 0.001 {
+        if (number - 0.001 < p && p < number + 0.001) {
             return true
         } else {
             return false
                }
         };
+
     var firstTest = checkResult(superRoot, 4);
     var secondTest = checkResult(superRoot, 9);
     var thirdTest = checkResult(superRoot, 81);
